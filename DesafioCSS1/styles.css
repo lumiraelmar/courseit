@@ -16,6 +16,7 @@ span {
     color: rgb(170, 170, 170);
     font-size: 0.9em;
     margin-right: 0.3em;
+    word-spacing: 3px;
 }
 
 p {
