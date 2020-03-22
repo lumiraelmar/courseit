@@ -1,0 +1,75 @@
+body {
+    background-color: #fff;
+    width: 650px;
+    margin: auto;
+}
+
+article {
+    margin-top: 40px;
+}
+
+.article-description {
+    color: #b9b9b9;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65em;
+    letter-spacing: 0.05em;
+}
+
+article hr {
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    margin-top: 0.3em;
+}
+
+.article-title {
+    color: #2e2e2e;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 0.1em;
+    letter-spacing: 0.03em;
+    
+}
+
+.author {
+    color: #979797;
+    font-size: 0.75em;
+    letter-spacing: 0.01em;
+}
+
+.author .link, .article-paragraph .link {
+    color: #42a9fd;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    float: right;
+    margin-top: 12px;
+}
+
+.article-paragraph {
+    color: #2e2e2e;
+    line-height: 1.5em;
+}
+
+.css-button {
+    font-size: 0.7em;
+    color: #f7f7f7;
+    background-color: #4db952;
+    padding: 1.3px 8px;
+}
+
+.pure-button {
+    font-size: 0.7em;
+    color: #f7f7f7;
+    background-color: #2c89e0;
+    padding: 1.3px 8px;
+}
+
+.js-button {
+    font-size: 0.7em;
+    color: #f7f7f7;
+    background-color: #e03c52;
+    padding: 1.3px 16px;
+}
