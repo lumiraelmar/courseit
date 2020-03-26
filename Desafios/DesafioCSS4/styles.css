@@ -1,0 +1,68 @@
+header {
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    word-spacing: 1em;
+}
+
+.header-links {
+    
+    color: gray;
+    padding: 8px 0px;
+    margin: 0px 10px
+}
+
+.article-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+.article {
+    height: 500px;
+    padding: 20px;
+    text-align: left;
+    color: rgb(247, 247, 247);
+    font-family: arial;
+}
+
+.article.art1 {
+    background-color: rgb(53, 130, 194);
+}
+
+.article.art2 {
+    background-color: rgb(112, 98, 110);
+}
+
+.article.art3 {
+    background-color: rgb(219, 136, 114);
+}
+
+.article.art4 {
+    background-color: rgb(38, 83, 138);
+}
+
+.article.art5 {
+    background-color: rgb(212, 86, 81);
+}
+
+.article.art6 {
+    background-color: rgb(169, 196, 191);
+}
+
+.date {
+    font-size: 0.5em;
+
+}
+
+.article-title {
+    margin-top: 5px;
+    font-size: 1.8em;
+}
+
+.article-paragraph {
+    font-size: 0.9em;
+    margin-bottom: 270px;
+}
+
+.article-footer {
+    font-size: 0.2em;
+}
