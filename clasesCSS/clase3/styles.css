@@ -1,0 +1,32 @@
+.wrapper {
+    position: relative;
+  }
+  
+  .articles-wrapper {
+    background-color: #ddd;
+    display: flex;
+  }
+  
+  .article {
+    padding: 10px;
+  }
+  
+  .article.art1 {
+    background-color: pink;
+  }
+  
+  .article.art2 {
+    background-color: green;
+  }
+  
+  .article.art3 {
+    background-color: blue;
+  }
+  
+  .article.art4 {
+    background-color: brown;
+  }
+  
+  .article.art5 {
+    background-color: indigo;
+  }
