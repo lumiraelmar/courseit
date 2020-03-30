@@ -22,6 +22,9 @@ header {
     text-align: left;
     color: rgb(247, 247, 247);
     font-family: arial;
+    display: flex;
+    flex-direction: column;
+    width: 16,6%;
 }
 
 .article.art1 {
@@ -60,9 +63,10 @@ header {
 
 .article-paragraph {
     font-size: 0.9em;
-    margin-bottom: 270px;
+    margin-bottom: auto;
 }
 
 .article-footer {
     font-size: 0.2em;
+    margin-top: auto;
 }
