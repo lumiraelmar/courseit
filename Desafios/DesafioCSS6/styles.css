@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+.blog-wrapper {
+    width: 100%;
+    display: flex;
+    max-width: 800px;
+    margin: 5% auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px 0 rgba(100, 100, 100, 0.13), 0 6px 50px 0 rgba(100, 100, 100, 0.13);
+}
+
+.blog-entry {
+    width: 60%;
+    font-family: "Open Sans", sans-serif;
+    padding: 35px 40px;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+.entry-title {
+    font-size: 1.9em;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+    color: #757575;
+
+
+}
+.entry-paragraph {
+    font-size: 1.25em;
+    line-height: 1.65em;
+    margin-bottom: 25px;
+    color: #757575;
+}
+
+.entry-link {
+    font-size: 1.25em;
+    text-decoration: none;
+    color: #58b0eb;
+
+}
+
+.entry-link:hover {
+    transition: 2s;
+	color: pink;
+}
+
+.blog-image {
+    width: 40%;
+}
+
+.image {
+    object-fit: cover;
+    height: 580px;
+    vertical-align: top;
+}
