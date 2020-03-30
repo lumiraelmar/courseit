@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap');
+
+body {
+    background: linear-gradient(40deg, #7d5fc3 18%,#ae9bda 48%,#ccc0e7 59%,#fdfdfd 100%) fixed;
+    
+}
+
+.login-wrapper {
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+    margin: 5% auto;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-wrapper .login-form {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	box-sizing: border-box;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+	padding: 60px 40px;
+}
+
+.login-wrapper .login-image {
+    width: 50%;
+}
+
+.login-wrapper .login-image .image {
+    width: 400px;
+    height: auto;
+	vertical-align: top;
+}
+
+.login-form .login-title {
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #313131;
+}
+
+.login-title .icon-title {
+    float: left;
+    width: 27px;
+    margin-right: 5px;
+}
+
+.login-form .login-message {
+    font-size: 1.5em;
+    font-weight: 300;
+	letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    color: #808080;
+}
+
+.login-form .buttons-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-form .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05em;
+    width:160px;
+    height:40px;
+    text-align:center;
+    line-height:1.1em;
+    margin-right: 10px;
+    color: #f3f3f3;
+    border-radius: 7px;
+}
+
+.fb-logo, .xing-logo {
+    width: 18px;
+    margin-right: 5px;
+}
+
+.login-form .fb-button {
+    background-color: #3b5998;
+}
+
+.login-form .xing-button {
+    background-color: #026466;
+}
+
+.login-form .or-span {
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    color: rgb(97, 97, 97);
+}
+
+.login-form .input-label {
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.login-form .input {
+    margin-bottom: 12px;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-top-style: hidden;
+    border-bottom-style: groove;
+    border-bottom: 0.5px solid #7324a0;
+}
+
+.login-form .checkbox-password {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.login-form .checkbox-label, .password-link {
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #464646;
+    text-decoration: none;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.password-link:hover {
+	transition: 2s;
+	color: rgb(119, 20, 211);
+}
+
+.login-form .buttons-login {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-form .button2 {
+    font-size: 1.1em;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding: 8px 32px;
+    margin-bottom: 55px;
+    border-radius: 5px;
+}
+
+.buttons-login .login-button {
+    background: linear-gradient(to right, rgb(119, 20, 211), rgb(182, 36, 211), rgb(226, 171, 186));
+    color: #f3f3f3;
+    border: 0px;
+}
+
+.buttons-login .singup-button {
+    color: #464646;
+    border: 1px solid #adadad;
+}
+
+.login-form .terms-conditions {
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #464646;
+}
+
+.login-form .terms-link{
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: none;
+    line-height: 1.6em;
+    color: rgb(104, 150, 214);
+}
+
+
+
