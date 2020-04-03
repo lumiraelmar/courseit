@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+.background {
+    padding: 0 10px;
+    width: 100%;
+    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper {
+    background-image: url("https://images.unsplash.com/photo-1545100760-db63cbae42b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80");
+    background-size: cover;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.name-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 35px;
+    font-size: 2em;
+    color: white;
+}
+
+.page-name {
+    font-size: 1.2em;
+}
+
+.button-login {
+    padding: 10px 14px;
+    font-size: 0.45em;
+    color: white;
+    background-color: transparent;
+    border-radius: 3px;
+
+}
+
+.signup-form {
+    padding-top: 40px;
+    padding-bottom: 90px;
+    text-align: center;
+}
+
+.signup-form .form-title {
+    font-size: 1.75em;
+    padding: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.signup-form .form-description {
+    font-size: 0.9em;
+    padding-bottom: 20px;
+    color: #bfdafd;
+}
+
+.signup-form .form {
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.signup-form .form .input-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.signup-form .form .input-text .input-option {
+    font-size: 0.85em;
+    padding: 20px;
+    margin: 7px 10px;
+    border-radius: 3px;
+    border: 0 solid white;
+    height: 55px;
+    width: 225px;
+    box-sizing: border-box;
+}
+
+.signup-form .form .question-create {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 25px;
+
+}
+
+.signup-form .form .question-create .question {
+    margin-top: 2px;
+    margin-bottom: 14px;
+    height: 55px;
+    border-radius: 23px;
+    border: 0 solid white;
+    color: #6d6d6d;
+    font-size: 0.7em;
+}
+
+.signup-form .form .question-create .create-account {
+    font-size: 0.7em;
+    height: 55px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    border: 0 solid white;
+    color: white;
+    background-color: #3f64b4;
+}
+
+.signup-form .form .terms {
+    font-size: 0.6em;
+    color: #bfdafd;
+}
+
+.signup-form .terms .terms-link {
+    color: #bfdafd;
+}
+
+.faq-section {
+    max-width: 850px;
+    max-height: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    background-color: white;
+    padding: 35px 10px 15px;
+    box-sizing: border-box;
+}
+
+.faq-section .q-a {
+    margin: 10px 0;
+    padding: 10px 20px 0;
+    
+}
+
+.faq-section .faq {
+    width: 360px;
+    font-size: 0.8em;
+}
+
+.faq-section .question {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: rgb(85, 85, 85);
+}
+
+.faq-section .answer {
+    color: rgb(145, 145, 145);
+    line-height: 1.9em;
+}
