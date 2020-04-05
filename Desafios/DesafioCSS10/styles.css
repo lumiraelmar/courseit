@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+.background {
+  background-color: #f5f5f5;
+  width: 100%;
+}
+.background .header {
+  background-color: #589be7;
+  height: 190px;
+}
+.background .wrapper {
+  max-width: 530px;
+  margin: -90px auto 0;
+  font-family: "Lato", sans-serif;
+}
+.background .wrapper .email-wrapper {
+  background-color: white;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.background .wrapper .email-wrapper .email-title {
+  text-align: center;
+  font-size: 2.65em;
+  letter-spacing: 0.1em;
+  padding: 40px 0px 35px;
+}
+.background .wrapper .email-wrapper .paragraph {
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 0 30px 20px;
+  color: #616161;
+  text-align: left;
+}
+.background .wrapper .email-wrapper .image {
+  margin: 15px 0 25px;
+  position: relative;
+}
+.background .wrapper .email-wrapper .image .img {
+  width: 530px;
+  height: 300px;
+  object-fit: cover;
+}
+.background .wrapper .email-wrapper .image .img-playbutton {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.background .wrapper .email-wrapper .changes-list .change-title {
+  font-size: 1.3em;
+  padding: 10px 25px 20px;
+}
+.background .wrapper .email-wrapper .changes-list .paragraph-link {
+  color: #47a8f8;
+  padding: 0 25px 30px;
+  display: inline-block;
+}
+.background .help {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #bde4fa;
+  padding: 30px 0;
+  margin-top: 30px;
+  font-size: 1.1em;
+}
+.background .help .more-help {
+  margin-bottom: 5px;
+}
+.background .help .help-link {
+  color: #47a8f8;
+}
+.background .footer {
+  display: flex;
+  flex-direction: column;
+  color: #616161;
+  padding: 30px 20px;
+  font-size: 0.8em;
+}
+.background .footer .footer-links .link {
+  color: #111;
+  display: inline-block;
+  font-weight: 700;
+  padding-bottom: 30px;
+}
+.background .footer .span {
+  padding-bottom: 30px;
+  line-height: 1.3em;
+}
+.background .footer .span .link {
+  color: #111;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=styles.css.map */
