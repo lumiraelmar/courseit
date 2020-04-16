@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+.body {
+  background-color: #f0f0f0;
+  min-width: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.body .wrapper .header-wrapper {
+  background-color: #fff;
+}
+.body .wrapper .header-wrapper .header-title {
+  font-size: 2.2rem;
+  padding: 25px 20px;
+  font-weight: 400;
+}
+.body .wrapper .main-page-wrapper {
+  display: flex;
+  flex-direction: row;
+  max-width: 1024px;
+  padding: 20px;
+}
+.body .wrapper .main-page-wrapper .aside-wrapper {
+  width: 200px;
+}
+.body .wrapper .main-page-wrapper .aside-wrapper .aside-title {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #313131;
+  font-weight: 600;
+}
+.body .wrapper .main-page-wrapper .aside-wrapper .opciones-filtros {
+  background-color: white;
+  padding: 10px;
+  margin: 10px 20px 0 0;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+}
+.body .wrapper .main-page-wrapper .aside-wrapper .opciones-filtros .fa {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 5px;
+}
+.body .wrapper .main-page-wrapper .main-wrapper {
+  width: 800px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+.body .wrapper .main-page-wrapper .main-wrapper .main-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #313131;
+  font-weight: 600;
+}
+.body .wrapper .main-page-wrapper .main-wrapper .products-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 800px;
+}
+.body .wrapper .main-page-wrapper .main-wrapper .products-wrapper .product-preview {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+}
+.body .wrapper .main-page-wrapper .main-wrapper .products-wrapper .product-preview .product-img {
+  width: 240px;
+  height: 235px;
+  object-fit: cover;
+}
+.body .wrapper .main-page-wrapper .main-wrapper .products-wrapper .product-preview .product-title {
+  font-size: 1.1rem;
+  margin: 15px;
+}
+.body .wrapper .main-page-wrapper .main-wrapper .products-wrapper .product-preview .product-price {
+  margin: 15px;
+  font-size: 1.1rem;
+  color: #6d6d6d;
+}
+.body .wrapper .footer-wrapper {
+  background-color: white;
+  padding: 20px 20px;
+}
+.body .wrapper .footer-wrapper .footer-description {
+  line-height: 1.5em;
+  color: grey;
+  padding-bottom: 15px;
+}
+.body .wrapper .footer-wrapper .store-name {
+  font-size: 1.2rem;
+  padding-bottom: 15px;
+}
+.body .wrapper .footer-wrapper .social-media {
+  display: flex;
+}
+.body .wrapper .footer-wrapper .social-media .fa {
+  font-size: 1rem;
+  padding: 2px;
+  color: #3f3f3f;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+/*# sourceMappingURL=main.css.map */

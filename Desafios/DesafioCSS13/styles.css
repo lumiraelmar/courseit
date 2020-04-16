@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400,600%display=swap");
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.background {
+  background-color: #2b3649;
+}
+.background .page-wrapper {
+  padding: 0px 40px;
+  min-height: 100vh;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.background .page-wrapper .hero-image-wrapper {
+  background-image: url(https://images.unsplash.com/photo-1562100879-e087ef43f2d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80);
+  background-size: cover;
+  padding: 30px 50px;
+}
+.background .page-wrapper .hero-image-wrapper .header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 260px;
+  align-items: center;
+}
+.background .page-wrapper .hero-image-wrapper .header-wrapper .fas {
+  display: none;
+  color: white;
+  font-size: 2.5em;
+}
+@media (max-width: 768px) {
+  .background .page-wrapper .hero-image-wrapper .header-wrapper .fas {
+    display: block;
+    margin-bottom: 50px;
+  }
+}
+.background .page-wrapper .hero-image-wrapper .header-wrapper .page-logo {
+  font-size: 2.5em;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .background .page-wrapper .hero-image-wrapper .header-wrapper .page-logo {
+    display: none;
+  }
+}
+.background .page-wrapper .hero-image-wrapper .header-wrapper .header-links {
+  display: inline;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
+}
+@media (max-width: 768px) {
+  .background .page-wrapper .hero-image-wrapper .header-wrapper .header-links {
+    display: none;
+  }
+}
+.background .page-wrapper .hero-image-wrapper .header-wrapper .header-links .link {
+  text-decoration: none;
+  color: white;
+  margin-left: 30px;
+}
+.background .page-wrapper .hero-image-wrapper .header-wrapper .header-links .link-button {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 12px 17px;
+}
+.background .page-wrapper .hero-image-wrapper .main-text {
+  text-align: left;
+  margin-left: 100px;
+}
+.background .page-wrapper .hero-image-wrapper .main-text .main-title {
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 5em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.background .page-wrapper .hero-image-wrapper .main-text .main-subtitle {
+  color: #888888;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3em;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+.background .page-wrapper .hero-image-wrapper .main-text .line {
+  width: 50px;
+  border-top: 2px solid #FFF;
+}
+.background .page-wrapper .hero-image-wrapper .second-text {
+  text-align: center;
+  margin-top: 200px;
+}
+.background .page-wrapper .hero-image-wrapper .second-text .second-title {
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.background .page-wrapper .hero-image-wrapper .second-text .second-subtitle {
+  color: #888888;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+}
+.background .page-wrapper .hero-image-wrapper .second-text .line {
+  margin: 0 auto 1em;
+  width: 50px;
+  border-top: 2px solid #FFF;
+}
+.background .page-wrapper .hero-image-wrapper .second-text .second-paragraph {
+  color: #888888;
+  font-family: "Montserrat", sans-serif;
+  width: 300px;
+  line-height: 2em;
+  font-size: 0.7em;
+  justify-self: center;
+  margin: 0 auto 80px;
+}
+.background .page-wrapper .latest-articles-wrapper {
+  background-color: #303d53;
+  text-align: center;
+  padding: 100px 70px;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-title {
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-subtitle {
+  color: #888888;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+.background .page-wrapper .latest-articles-wrapper .line {
+  margin: 0 auto 1em;
+  width: 50px;
+  border-top: 1px solid #FFF;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .background .page-wrapper .latest-articles-wrapper .articles-img {
+    flex-direction: column;
+  }
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img .img-wrapper {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  padding: 300px 0 50px;
+  margin: 30px 10px 0;
+  width: calc(33% - 20px);
+  letter-spacing: 0.1em;
+  box-shadow: 0px 20px 20px -7px rgba(28, 28, 28, 0.733), 5px 10px 19px 4px rgba(40, 40, 40, 0.11);
+  flex-grow: 1;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img .img-wrapper:hover {
+  filter: grayscale(100%);
+  transition: 1s;
+}
+@media (max-width: 768px) {
+  .background .page-wrapper .latest-articles-wrapper .articles-img .img-wrapper {
+    width: 100%;
+    background-position: 0% 35%;
+  }
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img .img-wrapper .img-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img .img-wrapper .img-subtitle {
+  font-weight: 400;
+  padding: 0 5px;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img .img1 {
+  background-image: url(https://images.unsplash.com/photo-1573865526739-10659fec78a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=958&q=80);
+  background-size: cover;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img .img2 {
+  background-image: url(https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);
+  background-size: cover;
+}
+.background .page-wrapper .latest-articles-wrapper .articles-img .img3 {
+  background-image: url(https://images.unsplash.com/photo-1572590285030-0ae6a4715671?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80);
+  background-size: cover;
+}
+.background .page-wrapper .subscribe-wrapper {
+  background-color: #1e293b;
+  text-align: center;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.background .page-wrapper .subscribe-wrapper .subscribe-title {
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.background .page-wrapper .subscribe-wrapper .subscribe-subtitle {
+  color: #888888;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+  font-size: 0.8em;
+}
+.background .page-wrapper .subscribe-wrapper .email-input {
+  color: #888888;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 30px;
+  background-color: #303d53;
+  border: 0px;
+  padding: 20px;
+  width: 420px;
+}
+.background .page-wrapper .subscribe-wrapper .submit-button {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  background-color: transparent;
+  font-size: 0.8em;
+  letter-spacing: 0.4em;
+  font-weight: 200;
+  padding: 10px 20px;
+}
+.background .page-wrapper .footer-wrapper {
+  background-color: #303d53;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 70px;
+  color: white;
+}
+.background .page-wrapper .footer-wrapper .page-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.background .page-wrapper .footer-wrapper .footer-links {
+  display: inline;
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
+}
+.background .page-wrapper .footer-wrapper .footer-links .link {
+  text-decoration: none;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 30px;
+}
+
+/*# sourceMappingURL=styles.css.map */
