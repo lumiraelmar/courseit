@@ -2,6 +2,10 @@ import React from 'react';
 import '../Button/style.css'
 
 class Button extends React.Component {
+  onClick() {
+      
+  }
+
   render() {
     return (
       <React.Fragment>
