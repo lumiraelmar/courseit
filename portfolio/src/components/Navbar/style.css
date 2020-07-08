@@ -1,0 +1,15 @@
+.navbarWrapper {
+  min-width: 100vw;
+  padding: 15px;
+  background-color: black;
+}
+.navbarLink {
+  display: grid;
+  place-items: center;
+  color: white;
+  transition: 1s;
+  text-decoration: none;
+}
+.navbarLink:hover {
+  color: pink;
+}
