@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from './components/Navbar/index';
+import Info from './components/Info/index';
 import Projects from './components/Projects/index';
+import axios from 'axios'
 import './App.css';
 import './reset.css';
 
@@ -8,26 +10,31 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: ''
+      name: '',
+      bio: '',
+      avatar: '',
+      profileURL: ''
     }
   }
 
   async componentDidMount() {
-    const getGithub = await fetch('https://api.github.com/users/lumiraelmar');
-    const getGithubJson = await getGithub.json();
+    const getGithub = await axios('https://api.github.com/users/lumiraelmar');
     
+    const { name, bio, avatar_url, url } = getGithub.data
     this.setState ({
-      data: getGithubJson
+      name: name,
+      bio: bio,
+      avatar: avatar_url,
+      profileURL: url
     })
   }
   
   render() {
-    const { name, avatar_url, bio, url } = this.state.data
+    const { name, bio, avatar, profileURL } = this.state
     return (
       <div className='wrapper'>
-        <Navbar name={name} url={url}/>
-        <img className='img' src={avatar_url}></img>
-        <p className='bio'>{bio}</p>
+        <Navbar name={name} url={profileURL}/>
+        <Info bio={bio} avatar={avatar}/>
         <Projects />
       </div>
     )
