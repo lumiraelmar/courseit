@@ -1,0 +1,19 @@
+
+.formWrapper {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 450px;
+}
+
+.inputForm {
+  margin: 15px 0px;
+  padding: 10px;
+}
+
+.buttonForm {
+  margin: 15px 0px;
+  padding: 10px;
+}
