@@ -13,7 +13,8 @@ class Form extends React.Component {
       web: '',
       twitter: '',
       instagram: '',
-      result: ''
+      estaOK: '',
+      showMessage: false
     }
   }
 
@@ -25,30 +26,46 @@ class Form extends React.Component {
   }
 
   handleClick() {
+    const { name, logo, email, description } = this.state;
+    const isValid = name && email && logo && description ? true : false;
+
     this.setState({
-      result: ''
+      estaOK: isValid,
+      showMessage: true
     })
+    //if (name && logo && email && description) {
+    //  this.setState({
+    //    estaOK: true,
+    //    showMessage: true
+    //  })
+    //} else {
+    //  this.setState({
+    //    estaOK: false,
+    //    showMessage: true
+    //  })
+    //}
   }
 
   render() {
-    
+    const { estaOK, showMessage } = this.state
     return (
       <div className='formWrapper'>
-        <form id='form'>
-          <input name='name' onChange={(e) => this.handleChange(e)} className='inputForm' type='' placeholder='Nombre'></input>
-          <input name='logo' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Logo'></input>
-          <input name='email' onChange={(e) => this.handleChange(e)} className='inputForm' type='email' placeholder='Mail'></input>
-          <textarea name='description' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Descripcion' form='form'></textarea>
-          <input name='web' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Web (optional)'></input>
-          <input name='twitter' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Twitter (optional)'></input>
-          <input name='instagram' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Instagram (optional)'></input>
-          <button onClick={() => this.handleClick()} className='buttonForm'>Submit</button>
-          {/*{Object.keys(this.state).map((result) => {
-            return (
-              <p>{this.state[result]}</p>
-            )
-          })}*/}
-        </form>
+        {showMessage && (
+          <p>{estaOK ? "Todo salio bien" : "Todo salio mal"}</p>
+        )}
+        <input name='name' onChange={(e) => this.handleChange(e)} className='inputForm' type='' placeholder='Nombre'></input>
+        <input name='logo' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Logo'></input>
+        <input name='email' onChange={(e) => this.handleChange(e)} className='inputForm' type='email' placeholder='Mail'></input>
+        <textarea name='description' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Descripcion' form='form'></textarea>
+        <input name='web' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Web (optional)'></input>
+        <input name='twitter' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Twitter (optional)'></input>
+        <input name='instagram' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Instagram (optional)'></input>
+        <button onClick={() => this.handleClick()} className='buttonForm'>Submit</button>
+        {/*{Object.keys(this.state).map((result) => {
+          return (
+            <p>{this.state[result]}</p>
+          )
+        })}*/}
       </div>
     )
   }
