@@ -1,6 +1,7 @@
 import React from 'react';
 import '../Card/style.css';
 
+
 class Card extends React.Component {
   render() {
     const { img, name, description } = this.props

@@ -4,3 +4,13 @@
   padding-top: 20px;
   flex-wrap: wrap;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 1s;
+}
+
+a:hover {
+  color: rgb(109, 50, 204);
+}

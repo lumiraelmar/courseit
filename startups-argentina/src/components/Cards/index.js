@@ -1,36 +1,55 @@
 import React from 'react';
 import Card from '../Card';
 import '../Cards/style.css';
+import { Link } from 'react-router-dom';
 
 class Cards extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cards: [
-        {
-          img: 'https://pbs.twimg.com/profile_images/1259719811296309249/um6CLRiM_400x400.jpg',
-          name: 'Courseit',
-          description: 'Description'
-        },
-        {
-          img: 'https://pbs.twimg.com/profile_images/1052208764726730753/s5bagDr__400x400.jpg',
-          name: 'Endeva',
-          description: 'Blablabla'
-        }
-      ]
+      cards: []
     }
   }
+
+  componentDidMount() {
+
+    const items = {...localStorage}
+    const itemsArray = Object.values(items)
+    const data = []
+    itemsArray.map(item => data.push(JSON.parse(item)))
+
+    /* const startups = localStorage.getItem('startups');
+    if (startups) {
+      const data = JSON.parse(Startups);
+      this.setState({
+      cards: data
+    })
+    }
+    */
+
+    this.setState({
+      cards: data
+    })
+  }
+
   render() {
     const { cards } = this.state
     const { filter } = this.props
+    console.log(1000, cards);
     return (
       <div className='cardsWrapper'>
         {cards.map((card, key) => {
           return (
             <React.Fragment>
             {card.name.toLowerCase().includes(filter.toLowerCase()) && (
-              <Card key={key} img={card.img} name={card.name} description={card.description}/>
+              <Link to={`/startups/${card.name.toLowerCase()}`}>
+                <Card 
+                  key={key} 
+                  img={card.logo} 
+                  name={card.name} 
+                  description={card.desc}/>
+              </Link>
             )}   
             </React.Fragment>
           )

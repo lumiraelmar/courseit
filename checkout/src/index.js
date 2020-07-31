@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './pages/Home'
+import Checkout from './pages/Checkout'
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Form from './pages/Form/form'
-import StartupPage from './pages/StartupPage'
 
 ReactDOM.render(
   <Router>
-    <Route exact path='/' component={App} />
-    <Route exact path='/form' component={Form} />
-    <Route exact path='/startups/:startupID' component={StartupPage}/>
+    <Route exact path='/' component={Home} />
+    <Route exact path='/checkout' component={Checkout} />
   </Router>,
   document.getElementById('root')
 );

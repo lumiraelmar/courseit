@@ -1,0 +1,18 @@
+.priceWrapper {
+  padding-top: 30px;
+  .shippingWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid grey;
+    .shipping {
+    }
+  }
+  .totalWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid grey;
+  }
+}

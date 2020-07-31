@@ -1,15 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Form from '../../components/Form'
+import Navbar from '../../components/Navbar'
 
-class Prueba extends React.Component {
+class FormPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <p>Soy una prueba</p>
+        <Navbar />
+        <Form />
         <Link to='/'>Ir a la home</Link>
       </React.Fragment>
     )
   }
 }
 
-export default Prueba;
+export default FormPage;

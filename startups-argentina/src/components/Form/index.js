@@ -28,22 +28,39 @@ class Form extends React.Component {
   handleClick() {
     const { name, logo, email, description } = this.state;
     const isValid = name && email && logo && description ? true : false;
-
+    
     this.setState({
       estaOK: isValid,
       showMessage: true
     })
-    //if (name && logo && email && description) {
-    //  this.setState({
-    //    estaOK: true,
-    //    showMessage: true
-    //  })
-    //} else {
-    //  this.setState({
-    //    estaOK: false,
-    //    showMessage: true
-    //  })
-    //}
+
+    if (isValid) {
+      localStorage.setItem([name],JSON.stringify(this.state));
+      /*const oldStartups = localStorage.getItem('startups')
+      
+      if (oldStartups){
+        const parsedOldStartups = JSON.parse(oldStartups)
+        parsedOldStartups.push({
+          name,
+          email,
+          logo,
+          desc
+        })
+
+        const newStartups = JSON.stringify(parsedOldStartups)
+        localStorage.setItem('startups', newStartups)
+      } else {
+        const startups = []
+        startups.push({
+          name,
+          email,
+          logo,
+          desc
+        })
+        const startupsToString = JSON.stringify(startups);
+        localStorage.setItem('startups', startupsToString);*/
+
+    }
   }
 
   render() {

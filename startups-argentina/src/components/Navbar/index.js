@@ -18,18 +18,17 @@ class Navbar extends React.Component {
     this.props.handleCallback(this.state.value)
   }
 
-  handleClick() {
-    
-  }
-
   render() {
+    const { showAutocomplete } = this.props
     return (
       <div className='navWrapper'>
         <div className='titleInputWrapper'>
-          <h1 className='titleNavbar'>Startup Argentina</h1>
-          <input onChange={(e) => this.handleChange(e)} className='input' type='' placeholder='Busca Startup'></input>
+          <Link to='/' ><h1 className='titleNavbar'>Startup Argentina</h1></Link>
+          {showAutocomplete && (
+            <input onChange={(e) => this.handleChange(e)} className='input' type='' placeholder='Busca Startup'></input>
+          )}
         </div>
-        <Link to='/form'><button onClick={() => this.handleClick()} className='button'>Agregar startup</button></Link>
+        <Link to='/form'><button className='button'>Agregar startup</button></Link>
       </div>
     )
   }

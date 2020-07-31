@@ -4,7 +4,6 @@ import Cards from './components/Cards';
 import Footer from './components/Footer';
 import './App.css';
 import './reset.css';
-import { Link } from 'react-router-dom'
 
 class App extends React.Component {
 constructor(props) {
@@ -22,14 +21,17 @@ constructor(props) {
     })
   }
 
+  componentDidMount() {
+    console.log(localStorage)
+  }
+
   render() {
     const { inputValue } = this.state
     return (
       <div className='wrapper'>
-        <Navbar handleCallback={(inputValue) => this.handleCallback(inputValue)}/>
+        <Navbar showAutocomplete={true} handleCallback={(inputValue) => this.handleCallback(inputValue)}/>
         <Cards filter={inputValue}/>
         <Footer />
-        <Link to='/prueba'>Ir a prueba</Link>
       </div>
     )
   }
