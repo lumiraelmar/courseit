@@ -1,0 +1,217 @@
+$mobileSize: 480px;
+$smallMobileSize: 320px;
+.cardWrapper {
+  margin: -25% auto 50px;
+  z-index: 9999;
+  display: inline-block;
+  height: 250px;
+  width: 400px;
+  perspective: 1000px;
+  @media (max-width: $mobileSize) {
+    height: 187.5px;
+    width: 300px;
+    margin: -25% auto 25px;
+  }
+  @media (max-width: $smallMobileSize) {
+    height: 150px;
+    width: 240px;
+  }
+  
+  .flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    &.flipActivate {
+      transform: rotateY(180deg);
+    }
+    .cardFrontWrapper{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; 
+      backface-visibility: hidden;
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://images.unsplash.com/photo-1492892132812-a00a8b245c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+      background-size: cover;
+      border-radius: 15px;
+      padding: 25px 30px;
+      color: #fafafa;
+      @media (max-width: $mobileSize) {
+        padding: 15px 20px;
+        border-radius: 10px;
+      }
+      @media (max-width: $smallMobileSize) {
+        padding: 10px 15px;
+      }
+      .chip {
+        background:linear-gradient(120deg, #BF953F, #fdf7b2, #bd902f, #fdf7b2, #AA771C);
+        width: 50px;
+        height: 40px;
+        border-radius: 8px;
+        margin-bottom: -40px;
+        @media (max-width: $mobileSize) {
+          width: 37.5px;
+          height: 30px;
+          margin-bottom: -30px;
+        }
+        @media (max-width: $smallMobileSize) {
+          width: 30px;
+          height: 24px;
+          margin-bottom: -25px;
+        }
+      }
+      .cardLogo {
+        text-align: right;
+        font-size: 1.5rem;
+        @media (max-width: $mobileSize) {
+          font-size: 1.1rem;  
+        }
+      }
+      .cardNumberWrapper{
+        padding-top: 60px;
+        padding-bottom: 80px;
+        height: 20px;
+        font-size: 1.4rem;
+        @media (max-width: $mobileSize) {
+          font-size: 0.95rem;
+          padding-top: 55px;
+          padding-bottom: 50px;
+        }
+        @media (max-width: $smallMobileSize) {
+          font-size: 0.95rem;
+          padding-top: 40px;
+          padding-bottom: 45px;
+        }
+      }
+      .cardNumberAutocomplete {
+        letter-spacing: 0.2rem;
+        text-align: center;
+        @media (max-width: $mobileSize) {
+          letter-spacing: 0.1rem;
+        }
+        @media (max-width: $smallMobileSize) {
+          letter-spacing: 0.05rem;
+        }
+      }
+      .bottomHalfFrontCard {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        @media (max-width: $mobileSize) {
+          font-size: 0.75rem;
+        }
+        .cardNameWrapper {
+          height: 32px;
+          .cardName {
+            margin-bottom: 5px;
+            @media (max-width: $smallMobileSize) {
+              margin-bottom: 1px;
+            }
+          }
+          .nameAutocomplete {
+            font-size: 1.1rem;
+            text-transform: capitalize;
+            @media (max-width: $mobileSize) {
+              font-size: 0.9rem;
+            }
+            @media (max-width: $smallMobileSize) {
+              font-size: 0.85rem;
+            }
+          }
+        }
+        .expireWrapper {
+          height: 32px;
+          width: 60px;
+          text-align: right;
+          .expire {
+            margin-bottom: 5px;
+            @media (max-width: $smallMobileSize) {
+              margin-bottom: 1px;
+            }
+          }
+          .expireAutocomplete {
+            font-size: 1.1rem;
+            @media (max-width: $mobileSize) {
+              font-size: 0.9rem;
+            }
+            @media (max-width: $smallMobileSize) {
+              font-size: 0.85rem;
+            }
+          }
+        }
+      }
+
+    }
+    .cardBackWrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
+      background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://images.unsplash.com/photo-1492892132812-a00a8b245c45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+      background-size: cover;
+      border-radius: 15px;
+      .magneticBand {
+        width: 100%;
+        height: 50px;
+        background-color: #111;
+        margin: 25px 0 10px;
+        @media (max-width: $mobileSize) {
+          height: 37.5px;
+          margin: 20px 0 8px;
+        }
+        @media (max-width: $smallMobileSize) {
+          height: 30px;
+        }
+      }
+      .cvvAutocomplete {
+        background-color: #fff;
+        color: #111;
+        text-align: right;
+        height: 50px;
+        margin: 0 13px;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 10px;
+        @media (max-width: $mobileSize) {
+          height: 37.5px;
+          margin: 0 9px;
+          font-size: 1rem;
+        }
+        @media (max-width: $smallMobileSize) {
+          height: 30px;
+        }
+      }
+      .cvv {
+        display: flex;
+        justify-content: flex-end;
+        color: #fff;
+        font-size: 1.1rem;
+        margin-right: 13px;
+        margin-bottom: 5px;
+        @media (max-width: $mobileSize) {
+          font-size: 0.9rem;
+        }
+      }
+      .textBackCard {
+        font-size: 0.8rem;
+        padding: 35px 0;
+        text-align: center;
+        color: #fff;
+        @media (max-width: $mobileSize) {
+          padding: 10px 0;
+          font-size: 0.5rem;
+        }
+        @media (max-width: $smallMobileSize) {
+          display: none;
+        }
+      }
+    }
+  }
+}

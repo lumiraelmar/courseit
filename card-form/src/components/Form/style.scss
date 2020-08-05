@@ -1,0 +1,73 @@
+$mobileSize: 480px;
+$smallMobileSize: 320px;
+.formWrapper {
+  margin: 0 auto;
+  width: 100%;
+  color: #222;
+  @media (max-width: $mobileSize) {
+    font-size: 0.9rem;
+  }
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    .inputLabel {
+      margin-bottom: 5px;
+    }
+    .input {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      border: 1.5px solid rgb(255, 206, 214);
+      background-color: #fafafa;
+      margin-bottom: 10px;
+      &:focus {
+        border: 1.5px solid #555;
+        background-color: #fafafa;
+        outline: none;
+      }
+      @media (max-width: $smallMobileSize) {
+        padding: 7px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  .expirationCVVWrapper {
+    display: flex;
+    width: 100%;
+    @media (max-width: $mobileSize) {
+      flex-direction: column;
+    }
+    
+    .expirationWrapper {
+      display: flex;
+      flex: 1;
+      @media (max-width: $smallMobileSize) {
+        flex-direction: column;
+      }
+      .input {
+        width: 150px;
+        margin-right: 8px;
+        @media (max-width: $mobileSize) {
+          width: 160px;
+        }
+        @media (max-width: $smallMobileSize) {
+          width: 100%;
+        }
+      }
+    }
+    
+  }
+  .button {
+    width: 100%;
+    border: none;
+    background-color: rgb(255, 206, 214);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    @media (max-width: $smallMobileSize) {
+      padding: 7px;
+    }
+  }
+}

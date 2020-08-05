@@ -4,12 +4,12 @@ import './style.scss'
 class Product extends React.Component {
   constructor(props){
     super(props);
-    const { qty } = this.props.product
     this.state = {
-      qty: qty
+      qty: this.props.product.qty
     }
   }
 
+  //PRIMER INTENTO
   //increment() {
   //  const { qty, price } = this.state
   //  this.setState({
@@ -35,7 +35,7 @@ class Product extends React.Component {
   //}
 
   handleClick(action) {
-    const { price } = this.props.product
+    const { price, id } = this.props.product
     const { qty } = this.state
     const newQty = action == 'less' ? qty - 1 : qty + 1
 
@@ -45,6 +45,8 @@ class Product extends React.Component {
       this.setState({
         qty: newQty
       })
+    } else if (newQty == 0){
+      this.props.deleteCallback(id)
     }
   }
   

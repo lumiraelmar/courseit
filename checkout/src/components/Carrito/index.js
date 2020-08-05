@@ -13,25 +13,23 @@ class Carrito extends React.Component {
   }
 
   componentDidMount() {
-    // traerlo de local storage
-    const productsLS = {...localStorage}
-    const itemsArray = Object.values(productsLS)
-    const parsedArray = []
-
     let totalPrice = 0
+    // traer localStorage
+    const stringifiedProducts = localStorage.getItem('carrito')
+    //si hay info en localStorage
+    if (stringifiedProducts) {
+      //parsear info
+      const products = JSON.parse(stringifiedProducts)
+      //map de los productos de localStorage
+      products.map(product => {
+        totalPrice = totalPrice + product.price
+      })
 
-    itemsArray.map(item => {
-      const parsedItem = JSON.parse(item)
-      parsedArray.push(parsedItem)
-      
-      totalPrice = totalPrice + parsedItem[0].price
-    })
-
-
-    this.setState({
-      products: parsedArray,
-      totalPrice: totalPrice
-    })
+      this.setState({
+        products: products,
+        totalPrice: totalPrice
+      })
+    }
   }
 
   handleCallback(action, price) {
@@ -41,17 +39,35 @@ class Carrito extends React.Component {
     this.setState({
       totalPrice: newTotalPrice
     })
-    //const { products } = this.state
-    //const totalPrice = [];
-    //products.map((product) => {
-      //if (product.id == id) {
-        //totalPrice.push(price)
-      //}
-      //})
-      //console.log(price)
-    //this.setState({
-      //totalCarrito: (totalPrice.reduce((a, b) => a + b))
-    //})
+  }
+
+  deleteCallback(id) {
+    const { products, totalPrice } = this.state
+    let newTotalPrice = totalPrice;
+
+    const filteredProducts = products.filter((product) => {
+      if (product.id == id) {
+        newTotalPrice = newTotalPrice - product.price;
+      }
+      return product.id != id;
+    })
+
+    const stringifiedCarrito = localStorage.getItem('carrito')
+    const parsedCarrito = JSON.parse(stringifiedCarrito);
+
+    //para borrar 1 producto del carrito 
+    for (let i = 0; i < parsedCarrito.length; i++) {
+      if (parsedCarrito[i].id == id) {
+        parsedCarrito.splice(i, 1)
+        const newCarrito = JSON.stringify(parsedCarrito)
+        localStorage.setItem('carrito', newCarrito)
+      }
+    }
+    
+    this.setState({
+      products: filteredProducts,
+      totalPrice: newTotalPrice
+    })
   }
 
   render() {
@@ -60,7 +76,7 @@ class Carrito extends React.Component {
       <div className='carritoWrapper'>
         {products.map((product, key) => {
           return(
-            <Product key={key} product={product[0]} handleCallback={(action, price) => this.handleCallback(action, price)}/>
+            <Product key={key} product={product} handleCallback={(action, price) => this.handleCallback(action, price)} deleteCallback={(id) => this.deleteCallback(id)}/>
           )
         })}
         <Price totalPrice={totalPrice}/>

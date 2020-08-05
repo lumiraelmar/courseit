@@ -23,31 +23,41 @@ class Home extends React.Component {
     }
   }
 
-  handleClick(e) {
-    //codigo robado de sole
-    const {products} = this.state;
-    const {innerText} = e.target.parentNode.childNodes[1];
-    console.log(innerText)
-
-    const filtered = products.filter(product => {
-      return(product.name === innerText)
-    })
-
-    localStorage.setItem(filtered[0].name, JSON.stringify(filtered))
-
+  handleClick(product) {
+    //ERA TAN FACIL
+    //traer info de localStorage
+    const stringifiedCarrito = localStorage.getItem('carrito')
+    //si hay info en localStorage
+    if (stringifiedCarrito) {
+      //convertir a json
+      const parsedCarrito = JSON.parse(stringifiedCarrito);
+      //agregar producto a json
+      parsedCarrito.push(product)
+      //convertir a string
+      const newCarrito = JSON.stringify(parsedCarrito)
+      //guardar en localStorage
+      localStorage.setItem('carrito', newCarrito)
+    } else {
+      //si no hay info agarrar producto
+      const parsedCarrito = [product]
+      //convertir producto a string
+      const newCarrito = JSON.stringify(parsedCarrito)
+      //guardar producto
+      localStorage.setItem('carrito', newCarrito)
+    }
+    //ir a la ruta /checkout
     this.props.history.push('/checkout')
   }
   
 
   render() {
     const { products } = this.state
-    console.log(this.props)
     return(
       <div className='wrapper'>
         <Slider {...this.settings}>
             {products.map((product, key) => {
             return(
-                <div key={key} className='productWrapper' onClick={(e) => this.handleClick(e)}>
+                <div key={key} className='productWrapper' onClick={() => this.handleClick(product)}>
                   <img className='imgSlider' src={product.img} />
                   <p className='productName'>{product.name}</p>
                   <p className='productPrice'>{product.price}</p>
