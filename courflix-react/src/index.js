@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './index.scss';
+import Home from './pages/Home';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import SelectedSeries from './pages/SelectedSeries/selectedSeries'
+import SelectedSeries from './pages/SelectedSeries'
 
 ReactDOM.render(
   <Router>
-    <Route exact path='/' component={App} />
-    <Route exact path='/selectedseries' component={SelectedSeries} />
+    <Route exact path='/' component={Home} />
+    <Route exact path='/content:title' component={SelectedSeries} />
   </Router>,
   document.getElementById('root')
 );

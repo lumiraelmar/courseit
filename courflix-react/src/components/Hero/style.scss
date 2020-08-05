@@ -1,19 +1,14 @@
 .heroImg {
-  background-image: url('../../assets/portada.png');
   background-size: cover;
+  background-position: center;
   padding: 160px 80px 120px;
   min-height: 85vh;
   color: #fff;
   display: block;
   font-family: 'Open Sans', sans-serif;
-  .heroSubtitle {
-    font-size: 1.5rem;
-    margin-bottom: 18px;
-    font-weight: bold;
-  }
   .heroTitle {
     font-size: 7.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
     line-height: 6rem;
     max-width: 650px;
     font-weight: bold;
@@ -32,9 +27,28 @@
     font-size: 1.3rem;
     font-weight: 300;
   }
-  .heroSeason {
-    margin-top: 20px;
-    font-size: 1.4rem;
+  .seriesDetails {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    .heroAge {
+      color: #FFFFFF;
+      padding: 2px 6px;
+      border: 1px solid #979797;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+    .heroYear {
+      color: #FFFFFF;
+      margin-right: 10px;
+    }
+    .heroSeason {
+      color: #FFFFFF;
+      font-weight: bold;
+    }
   }
   .heroDescription {
     margin-top: 10px;
