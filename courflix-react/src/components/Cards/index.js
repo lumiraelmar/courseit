@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 class Cards extends React.Component {
   render() {
-    const { img, title } = this.props.item
+    const { img } = this.props.item
     return (
       <div className='carouselImgWrapper'>
-        <Link to={`/content/${title.toLowerCase()}`}>
+        <Link to={`/content/`}>
           <img className='carouselImg' src={img} />
         </Link>
       </div>

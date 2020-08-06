@@ -9,7 +9,7 @@ import SelectedSeries from './pages/SelectedSeries'
 ReactDOM.render(
   <Router>
     <Route exact path='/' component={Home} />
-    <Route exact path='/content:title' component={SelectedSeries} />
+    <Route exact path='/content/:id' component={SelectedSeries} />
   </Router>,
   document.getElementById('root')
 );
