@@ -14,29 +14,29 @@ class Cards extends React.Component {
 
   componentDidMount() {
 
-    const items = {...localStorage}
+    /*const items = {...localStorage}
     const itemsArray = Object.values(items)
     const data = []
     itemsArray.map(item => data.push(JSON.parse(item)))
+    
+    this.setState({
+      cards: data
+    })*/
 
-    /* const startups = localStorage.getItem('startups');
+    const startups = localStorage.getItem('startups');
+
     if (startups) {
-      const data = JSON.parse(Startups);
+      const data = JSON.parse(startups);
+
       this.setState({
       cards: data
     })
     }
-    */
-
-    this.setState({
-      cards: data
-    })
   }
 
   render() {
     const { cards } = this.state
     const { filter } = this.props
-    console.log(1000, cards);
     return (
       <div className='cardsWrapper'>
         {cards.map((card, key) => {
@@ -48,7 +48,7 @@ class Cards extends React.Component {
                   key={key} 
                   img={card.logo} 
                   name={card.name} 
-                  description={card.desc}/>
+                  desc={card.desc}/>
               </Link>
             )}   
             </React.Fragment>

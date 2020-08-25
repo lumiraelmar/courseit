@@ -1,9 +1,9 @@
 import React from 'react';
 import '../InnerCarousel/style.scss'
 import Slider from 'react-slick';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import { Link } from 'react-router-dom';
+import "../../../node_modules/slick-carousel/slick/slick.css"; 
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+import Card from '../Card';
 
 class InnerCarousel extends React.Component {
   constructor(props) {
@@ -12,36 +12,47 @@ class InnerCarousel extends React.Component {
       slidesToShow: 4,
       slidesToScroll: 1,
       accessibility: true,
-      infinite: true,
+      infinite: props.from == 'selectedSeries' || props.carouselTitle == 'My List' ? false : true,
       speed: 400,
       variableWidth: true,
       responsive: [
         {
-          breakpoint: 1500,
+          breakpoint: 1700,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
           }
+        },
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            swipeToSlide: true
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: ((props.from) == 'home') ? {slidesToShow: 1,
+            slidesToScroll: 1, arrows: false} :'unslick' 
         }
       ]
     } 
   }
 
   render() {
+    const { content, from, watched } = this.props
     return (
-      <div className='sliderWrapper'>
+      <React.Fragment>
         <Slider {...this.settings}>
-          {this.props.option.map((serie, key) => {
+          {content.map((cont, key) => {
             return (
-              <div className='carouselImgWrapper'>
-                <Link to={`/content/${serie.id}`}>
-                  <img className='carouselImg' src={serie.img} key={key}/>
-                </Link>
-              </div>
+              <Card cont={cont} key={key} from={from} watched={watched}/>
             )
           })}
         </Slider>
-      </div>
+      </React.Fragment>
     )
   }
 }

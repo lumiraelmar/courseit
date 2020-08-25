@@ -14,6 +14,21 @@ class StartupPage extends React.Component {
     };
   }
 
+
+  componentDidMount() {
+    const startups = localStorage.getItem("startups");
+    if(startups) {
+      const parsedStartups = JSON.parse(startups);
+      const filtered = parsedStartups.filter((startup) => {
+        return startup.name.toLowerCase() == this.props.match.params.startupID
+      })
+      this.setState({
+        name: filtered[0].name,
+        img: filtered[0].logo,
+        desc: filtered[0].desc
+      });
+    }
+  }
   /*componentDidMount() {
     const filtered = startups.filter((startup) => {
       return startup.id == this.props.match.params.startupID;
@@ -27,6 +42,7 @@ class StartupPage extends React.Component {
 
   render() {
     const { img, name, desc } = this.state
+    console.log(this.state.desc)
     return (
       <React.Fragment>
         <Navbar />

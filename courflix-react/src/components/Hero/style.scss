@@ -1,58 +1,112 @@
 $mobile-breakpoint: 480px;
 $tablet-breakpoint: 1024px;
-$hamburger-breakpoint: 950px;
+$hamburger-breakpoint: 900px;
 
+.videoPlayer {
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.iconClose {
+  position: absolute;
+  right: 1%;
+  top: 12%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 3rem;
+  z-index: 999;
+  cursor: pointer;
+}
 .heroWrapper {
   color: #fff;
   display: block;
   font-family: 'Open Sans', sans-serif;
+  &.blur {
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+    -ms-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+  }
   .heroImg {
     background-size: cover;
-    background-position: center;
     padding: 160px 80px 120px;
     min-height: 85vh;
-    @media screen and (max-width: $tablet-breakpoint) {
+    @media (max-width: $tablet-breakpoint) {
         padding: 160px 50px 120px;
         min-height: 60vh;
       }
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: 100px 30px 130px;
-        min-height: 40vh ;
-        background-position: center;
-      }
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding: 100px 30px 130px;
+      min-height: 40vh ;
+      background-position: center;
+    }
     .heroTitle {
-      font-size: 7.5rem;
+      font-size: 5rem;
       margin-bottom: 40px;
-      line-height: 6rem;
+      line-height: 5rem;
       max-width: 650px;
       font-weight: bold;
       @media screen and (max-width: $mobile-breakpoint) {
         display: block;
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 0px;
+        margin: 20px 0;
+        line-height: 2rem;
       }
     }
-    .heroButton {
-      display: inline-flex;
+    .alignCenter {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      width: 198px;
-      height: 60px;
-      background: rgba(157, 151, 151, 0.541521);
-      border-radius: 9px;
-      margin-right: 25px;
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.3rem;
-      font-weight: 300;
-      @media screen and (max-width: $mobile-breakpoint) {
-        width: 131px;
-        height: 43px;
-        margin-right: 7px;
-        border-radius: 3px; 
+      .heroButton {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 198px;
+        height: 60px;
+        background: rgba(157, 151, 151, 0.541521);
+        border-radius: 9px;
+        margin-right: 25px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 300;
+        cursor: pointer;
+        @media screen and (max-width: $mobile-breakpoint) {
+          width: 131px;
+          height: 43px;
+          margin-right: 7px;
+          border-radius: 3px; 
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+      .icon {
+        font-size: 2.6rem;
+        margin-right: 15px;
+        border-radius: 50px;
+        padding: 7px;
+        border: 2px solid #fff;
+        cursor: pointer;
+        &.like{
+          color: green;
+          border-color: green;
+        }
+        &.dislike {
+          color: red;
+          border-color: red;
+        }
+        @media screen and (max-width: $mobile-breakpoint) {
+          display: none;
+        }
       }
     }
+    
     .seriesDetails {
       margin: 20px 0;
       font-size: 1.1rem;
@@ -94,4 +148,3 @@ $hamburger-breakpoint: 950px;
     }
     }
 }
-  

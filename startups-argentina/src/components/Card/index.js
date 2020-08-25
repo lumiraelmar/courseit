@@ -4,13 +4,13 @@ import '../Card/style.css';
 
 class Card extends React.Component {
   render() {
-    const { img, name, description } = this.props
+    const { img, name, desc } = this.props
     return (
       <div className='cardWrapper' >
         <img className='img' src={img}></img>
         <div className='infoWrapper'>
           <p className='title'>{name}</p>
-          <p className='description'>{description}</p>
+          <p className='description'>{desc}</p>
         </div>
       </div>
     )

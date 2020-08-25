@@ -9,7 +9,7 @@ class Form extends React.Component {
       name: '',
       logo: '',
       email: '',
-      description: '',
+      desc: '',
       web: '',
       twitter: '',
       instagram: '',
@@ -26,7 +26,7 @@ class Form extends React.Component {
   }
 
   handleClick() {
-    const { name, logo, email, description } = this.state;
+    /*const { name, logo, email, description } = this.state;
     const isValid = name && email && logo && description ? true : false;
     
     this.setState({
@@ -35,9 +35,9 @@ class Form extends React.Component {
     })
 
     if (isValid) {
-      localStorage.setItem([name],JSON.stringify(this.state));
-      /*const oldStartups = localStorage.getItem('startups')
-      
+      localStorage.setItem([name],JSON.stringify(this.state));*/
+      const oldStartups = localStorage.getItem('startups')
+      const { name, email, logo, desc} = this.state
       if (oldStartups){
         const parsedOldStartups = JSON.parse(oldStartups)
         parsedOldStartups.push({
@@ -58,7 +58,7 @@ class Form extends React.Component {
           desc
         })
         const startupsToString = JSON.stringify(startups);
-        localStorage.setItem('startups', startupsToString);*/
+        localStorage.setItem('startups', startupsToString);
 
     }
   }
@@ -73,7 +73,7 @@ class Form extends React.Component {
         <input name='name' onChange={(e) => this.handleChange(e)} className='inputForm' type='' placeholder='Nombre'></input>
         <input name='logo' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Logo'></input>
         <input name='email' onChange={(e) => this.handleChange(e)} className='inputForm' type='email' placeholder='Mail'></input>
-        <textarea name='description' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Descripcion' form='form'></textarea>
+        <textarea name='desc' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Descripcion' form='form'></textarea>
         <input name='web' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Web (optional)'></input>
         <input name='twitter' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Twitter (optional)'></input>
         <input name='instagram' onChange={(e) => this.handleChange(e)} className='inputForm' type='text' placeholder='Instagram (optional)'></input>

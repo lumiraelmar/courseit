@@ -1,6 +1,6 @@
 $mobile-breakpoint: 480px;
 $tablet-breakpoint: 1024px;
-$hamburger-breakpoint: 950px;
+$hamburger-breakpoint: 900px;
 
 .nav {
   display: flex;
@@ -8,13 +8,28 @@ $hamburger-breakpoint: 950px;
   font-weight: bold;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 99999999;
   background-color: rgba(0, 0, 0, 0.801218);
   @media screen and (max-width: $hamburger-breakpoint){
     background-color:  #000;
   }
+  .hamburgerMenu {
+    display: none;
+    @media (max-width: $hamburger-breakpoint) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .arrowIcon {
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 -55px 0 25px;
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 1rem;
+    }
+  }
   .pageLogo {
-    padding: 12px 85px;
+    margin: 12px 85px;
   }
   .navbar {
     display: flex;
@@ -43,6 +58,7 @@ $hamburger-breakpoint: 950px;
       text-decoration: none;
       padding-right: 27px;
       display: inline-flex;
+      cursor: pointer;
       @media screen and (max-width: $hamburger-breakpoint){ 
         padding: 24px 0 0 13px;
         font-weight: normal;
