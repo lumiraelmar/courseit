@@ -1,3 +1,18 @@
 [submodule "studio-ghibli"]
 	path = studio-ghibli
 	url = https://github.com/lumiraelmar/studioghibli-random
+[submodule "blog-newsletter"]
+	path = blog-newsletter
+	url = https://github.com/lumiraelmar/blog-newsletter
+[submodule "courflix"]
+	path = courflix
+	url = https://github.com/lumiraelmar/courflix
+[submodule "desafio-react"]
+	path = desafio-react
+	url = https://github.com/lumiraelmar/desafio-react
+[submodule "github-usercards"]
+	path = github-usercards
+	url = https://github.com/lumiraelmar/github-user-cards
+[submodule "login-form"]
+	path = login-form
+	url = https://github.com/lumiraelmar/login-form

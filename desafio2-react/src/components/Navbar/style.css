@@ -1,0 +1,16 @@
+.navbarWrapper {
+  display: flex;
+  align-items: center;
+  background-color: #111;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+}
+.navbarTitle {
+  margin: 0 15px;
+  color: #fff;
+}
+.navbarLink {
+  text-decoration: none;
+  color: #fff;
+}
