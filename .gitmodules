@@ -6,7 +6,7 @@
 	url = https://github.com/lumiraelmar/blog-newsletter
 [submodule "courflix"]
 	path = courflix
-	url = https://github.com/lumiraelmar/courflix
+	url = https://github.com/lumiraelmar/lumiraelmar.github.io
 [submodule "desafio-react"]
 	path = desafio-react
 	url = https://github.com/lumiraelmar/desafio-react
