@@ -1,0 +1,22 @@
+.cardWrapper {
+  max-width: 150px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  transition: 1s;
+  &:hover {
+    background-color: #ae8add;
+    .link {
+      color: #6b0ee6;
+    }
+  }
+  .img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  .title {
+    font-size: 1rem;
+  }
+}

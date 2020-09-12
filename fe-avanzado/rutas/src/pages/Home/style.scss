@@ -1,0 +1,19 @@
+.homeWrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-items: center;
+  .unWrapper {
+    display: flex;
+    padding: 10px;
+    
+    .country {
+      background-color: pink;
+    }
+    .flag {
+      height: 30px;
+      width: 50px;
+      object-fit: cover;
+    }
+  }
+}
