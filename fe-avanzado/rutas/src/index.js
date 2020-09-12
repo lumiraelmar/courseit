@@ -4,14 +4,14 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Home from './pages/Home'
 //import Main from './pages/Main'
-import FunctionalCarousel from './pages/FunctionalCarousel'
+import FunctionalMain from './pages/FunctionalMain'
 import Product from './pages/Product'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 ReactDOM.render(
   <Router>
     <Route exact path='/' component={Home} />
-    <Route exact path='/main/:site' component={FunctionalCarousel} />
+    <Route exact path='/main/:site' component={FunctionalMain} />
     <Route exact path='/items/:id' component={Product} />
   </Router>,
   document.getElementById('root')
