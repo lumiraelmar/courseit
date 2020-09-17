@@ -1,0 +1,21 @@
+.projectWrapper {
+  text-align: center;
+  min-width: 180px;
+  padding: 5px 10px;
+  margin: 7px auto; 
+  border: 1px solid #222;
+  background-color: rgb(250, 218, 223);
+  &:hover {
+    border: 1px solid #fafafa;
+    .link {
+      color: #fafafa;
+    }
+  }
+  .link {
+    text-decoration: none;
+    color: #222;
+    .projectName {
+
+    }
+  }
+}
