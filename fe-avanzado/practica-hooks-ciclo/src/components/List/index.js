@@ -20,7 +20,7 @@ function List(props) {
       {data.filter((item) => {
         return item.title
         .toLowerCase()
-        .includes(props.searchParam.toLowerCase())
+        .includes(searchParam.toLowerCase())
       }).map((item, key) => {
         return(
           <Item 
