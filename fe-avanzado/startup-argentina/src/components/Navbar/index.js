@@ -1,12 +1,13 @@
 import React from 'react';
 import Input from '../Input'
+import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
     <>
       <p>STARTUP ARGENTINA</p>
       <Input />
-      <button>Agregar Startup</button>
+      <Link to='/addstartup'><button>Agregar Startup</button></Link>
     </>
   );
 }

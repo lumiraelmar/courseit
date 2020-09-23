@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+//import Home from './pages/Home'
+//import Startup from './pages/Startup'
+import AddStartup from './pages/AddStartup/AddStartup'
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Route exact path='/' component={App} />
+    {/* <Route exact path='/startup:name' component={Startup} /> */}
+    <Route exact path='/addstartup' component={AddStartup} />
+  </Router>,
   document.getElementById('root')
 );
 
