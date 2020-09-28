@@ -1,15 +1,23 @@
 import React from 'react';
 
 function TextInput(props) {
-  const { name, placeholder } = props
-  function handleChange(e) {
-    const { name, value } = e.target
-    props.handleCallback(name, value)
-  }
+  const { label, name, placeholder, type, onChange } = props
+
   return (
     <form>
-      <label>{name}</label>
-      <input name={name} type='text' placeholder={placeholder} onChange={handleChange}/>
+      {label &&<label>{label}</label>}
+      {name == 'desc' ? 
+        <textarea 
+        name={name} 
+        type={type} 
+        placeholder={placeholder} 
+        onChange={onChange}/> :
+        <input 
+        name={name} 
+        type={type} 
+        placeholder={placeholder} 
+        onChange={onChange}/>
+      }
     </form>
   )
 }

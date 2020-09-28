@@ -1,12 +1,8 @@
-import {useState} from 'react';
-
-export const useValidation = (minLength = 1) => {
-  const [isValid, setIsValid] = useState(false)
-
-  const handleChange = (e) => {
-    const { value } = e.target
-    const validate = value.length >= minLength ? true : false;
-    setIsValid(validate)
+export const useValidation = (data, requiredFields) => {
+    const errors = requiredFields.filter((field) => {
+      if (!data[field] || data[field].length <= 0) {
+        return field
+      }
+    })
+    return errors
   }
-  return [isValid, handleChange]
-}
