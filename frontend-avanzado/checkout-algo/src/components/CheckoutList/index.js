@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Product from '../Product';
+import AlgoContext from '../../contexts/AlgoContext';
 import './style.scss';
 
 function CheckoutList({list}) {
+  const { productsList }= useContext(AlgoContext);
   return (
     <div>
-      {list.length > 0 && 
+      {productsList.length > 0 && 
       <ul>
-        {list.map((product, key) => {
+        {productsList.map((product, key) => {
           return (
             <li>
               <Product 

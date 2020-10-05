@@ -1,27 +1,27 @@
 [
   {
     "title": "Pokemon Plush",
-    "price": "5000",
+    "price": 5000,
     "img": "https://images.unsplash.com/photo-1585251310116-a8e0cd51d73b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
   },
   {
     "title": "Cookie",
-    "price": "49.99",
+    "price": 49.99,
     "img": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
   },
   {
     "title": "Ipad Pro",
-    "price": "79999",
+    "price": 79999,
     "img": "https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=948&q=80"
   },
   {
     "title": "Butter Toffee",
-    "price": "2",
+    "price": 2,
     "img": "https://www.candywarehouse.com/item-images/128142-01_arcor-chocolate-butter-toffee-chewy-candy-1lb-bag.jpg?resizeid=104&resizeh=1000&resizew=1000"
   },
   {
     "title": "Flynn Paff",
-    "price": "10",
+    "price": 10,
     "img": "https://distribuidoratorres.com.ar/wp-content/uploads/2018/10/CARAMELOS-FLYNN-PAFF-FRUTILLA-X70U..jpg"
   }
 ]

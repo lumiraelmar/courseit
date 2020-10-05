@@ -10,31 +10,35 @@ function App() {
   const [productsList, setProductsList] = useState([])
   const [totalPrice, setTotalPrice] = useState(0);
 
-  function handleToggle(toggle) {
-    setToggle(toggle)
+  function handleToggle() {
+    //para toggle
+    setToggle((prevState) => !prevState)
   }
 
   function handleProduct(data) {
     const prices = [];
-    setProductsList([...productsList, data]);
+    //guardar lista de productos actualizada
+    setProductsList((prevState) => [...prevState, data]);
+    //sumar los precios de productos
+    setTotalPrice((prevState) => prevState + data.price)
 
-    [...productsList, data].map((product) => {
-      prices.push(product.price)
-    }) 
-    if (prices.length > 0) {
-      const suma = prices.reduce(function(a, b) {
-        return parseInt(a) + parseInt(b); 
-      })
-      setTotalPrice(suma)
-    }
+    //old way of showing price
+    // productsList.map((product) => {
+    //   prices.push(product.price)
+    // }) 
+    // if (prices.length > 0) {
+    //   const suma = prices.reduce(function(a, b) {
+    //     return parseInt(a) + parseInt(b); 
+    //   })
+    //   setTotalPrice(suma)
+    // }
   }
 
   const contextCarrito = {
     productsList: productsList,
     totalPrice: totalPrice,
     handleToggle: handleToggle,
-    handleProduct: handleProduct,
-    toggle: toggle
+    handleProduct: handleProduct
   }
 
   return (

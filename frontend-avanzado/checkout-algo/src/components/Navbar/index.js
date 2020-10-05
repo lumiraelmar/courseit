@@ -6,10 +6,10 @@ import './style.scss';
 function Navbar(props) {
   const { title, button } = props
   return (
-    <div>
+    <nav>
       <Title title={title}/>
       <Button button={button}/>
-    </div>
+    </nav>
   );
 }
 
