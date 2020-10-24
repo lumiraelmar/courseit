@@ -1,0 +1,57 @@
+.articlesWrapper {
+  max-width: 700px;
+  margin: 10px auto;
+  border: solid 1px #333;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #333;
+  .coverImg {
+    max-width: 100%;
+  }
+  .userInfo {
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    .userImg {
+      max-width: 40px;
+      max-height: 40px;
+      object-fit: cover;
+      border-radius: 50px;
+      margin-right: 10px;
+    }
+    .userName {
+      font-weight: 500;
+    }
+  }
+  .articleInfo {
+    padding: 0px 50px;
+    .articleTitle {
+      font-size: 1.8rem;
+    }
+    .articleDesc {
+      font-size: 1.2rem;
+      margin-right: 10px;
+    }
+    .commentWrapper {
+      display: flex;
+      .comments {
+        padding-right: 10px;
+      }
+      .reactions {
+  
+      }
+    }
+  }
+  }
+  
+.articleWrapper {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  .title {
+    font-size: 1.8rem;
+  }
+  .desc {
+    line-height: 1.6rem;
+  }
+}
