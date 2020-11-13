@@ -18,15 +18,17 @@ export default function Home({articles}) {
             <div className={styles.articleInfo}>
               <h3 className={styles.articleTitle}>{article.title}</h3>
               <p className={styles.articleDesc}>{article.description}</p>
-              <div className={styles.commentWrapper}>
-                {article.comments_count &&
-                <p className={styles.comments}>✎{article.comments_count}</p>}
-                {article.public_reactions_count &&
-                <p className={styles.reactions}>♡{article.public_reactions_count}</p>}
-                <ul>
+              <div className={styles.footerWrapper}>
+                <div className={styles.commentWrapper}>
+                  {article.comments_count &&
+                  <p className={styles.comments}>✎{article.comments_count}</p>}
+                  {article.public_reactions_count &&
+                  <p className={styles.reactions}>♡{article.public_reactions_count}</p>}
+                </div>
+                <ul className={styles.tagsWrapper}>
                   {(article.tag_list).map((tag, key) => {
                     return(
-                      <li key={key}>#{tag}</li>
+                      <li key={key} className={styles.tag}>#{tag}</li>
                     )
                   })}
                 </ul>

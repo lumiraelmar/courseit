@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Album from './pages/Album'
+import Dashboard from './pages/Dashboard';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Route exact path='/' component={App} />
+    <Route exact path='/dashboard' component={Dashboard} />
+    <Route exact path='/album' component={Album} />
+  </Router>,
   document.getElementById('root')
 );
 
