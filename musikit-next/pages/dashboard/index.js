@@ -4,41 +4,58 @@ import Navbar from '../../components/Navbar'
 import Sidebar from '../../components/Sidebar'
 import Carousel from '../../components/Carousel'
 import Player from '../../components/Player'
+import axios from 'axios';
+import { TokenProvider } from '../../contexts/tokenContext'
 
-function Dashboard() {
-  const [data, setData] = useState([]);
+export default function Dashboard() {
+  const [albums, setAlbums] = useState([]);
+  const [popPunkAlbums, setPopPunkAlbums] = useState([]);
+  const [recentlyPlayed, setRecentlyPlayed] = useState([]);
+  const [playlists, setPlaylists] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+
   const router = useRouter()
   const [fullHash] = router.asPath.split('&');
   const [, accessToken] = fullHash.split('=');
 
   useEffect(()=> {
-    fetchData()
+    fetchData('https://api.spotify.com/v1/me/albums', setAlbums)
+    fetchData('https://api.spotify.com/v1/search?q=taylor&20swift&type=album', setPopPunkAlbums)
+    fetchData('https://api.spotify.com/v1/me/player/recently-played', setRecentlyPlayed)
+    fetchData('https://api.spotify.com/v1/me/playlists/', setPlaylists)
+    fetchData('https://api.spotify.com/v1/me/', setUserInfo)
   }, [])
 
-  async function fetchData() {
-    const data = await fetch('https://api.spotify.com/v1/me/albums', {
-      headers: {
-        'Authorization': `Bearer ${accessToken}`
-      }
-    })
-    const dataJson = await data.json();
-    setData(dataJson)
+  async function fetchData(url, setter) {
+    const data = await axios.get(url, { 
+      headers: { 'Authorization': `Bearer ${accessToken}` } }
+    )
+    setter(data.data)
+
+    const stringifiedToken = JSON.stringify(accessToken);
+    localStorage.setItem('token', stringifiedToken)
   }
-  console.log(data)
 
   return (
+    <TokenProvider value={accessToken} >
     <div className="App">
       <Navbar />
       <Sidebar />
-      <Carousel title='Un Carousel' albums={data.items}/>
-      <Carousel title='Un segundo Carousel' albums={data.items}/>
-      <Carousel title='Un tercer Carousel' albums={data.items}/>
+      {albums.items && 
+        <Carousel title='Saved Albums' albums={albums.items}/>
+      }
+      {popPunkAlbums.albums &&
+        <Carousel title='Taylor Swift' albums={popPunkAlbums.albums.items}/>
+      }
+      {recentlyPlayed.data &&
+        <Carousel title='Recently Played' albums={recentlyPlayed.data.items}/>
+      }
+      {playlists &&
+        <Carousel title='Playlists' albums={playlists.items}/>
+      }
       <Player />
     </div>
+    </TokenProvider>
   );
 }
 
-export default Dashboard;
-
-//https://api.spotify.com/v1/me/albums
-//https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02/albums

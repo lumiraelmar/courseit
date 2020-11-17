@@ -1,5 +1,4 @@
 // import './style.scss'
-
 import InnerCarousel from '../InnerCarousel'
 
 function Carousel({title, albums}) {

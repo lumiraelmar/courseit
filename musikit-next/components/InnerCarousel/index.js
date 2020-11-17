@@ -8,7 +8,10 @@ function InnerCarousel({albums}) {
       {albums &&
         albums.map((album, key) => {
           return (
+            album.album ?
             <Card album={album.album} key={key}/>
+            :
+            <Card album={album} key={key}/>
           )
         })
       }
