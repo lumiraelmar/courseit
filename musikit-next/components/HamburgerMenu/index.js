@@ -1,11 +1,7 @@
-import './style.scss'
+import styles from "./Hamburger.module.scss";
 
 function HamburgerMenu() {
-  return (
-    <div>
-
-    </div>
-  );
+  return <div></div>;
 }
 
 export default HamburgerMenu;

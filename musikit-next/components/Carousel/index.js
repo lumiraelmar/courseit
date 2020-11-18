@@ -1,7 +1,7 @@
-// import './style.scss'
-import InnerCarousel from '../InnerCarousel'
+import styles from "./Carousel.module.scss";
+import InnerCarousel from "../InnerCarousel";
 
-function Carousel({title, albums}) {
+function Carousel({ title, albums }) {
   return (
     <div>
       <h2>{title}</h2>
