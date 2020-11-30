@@ -3,10 +3,9 @@ import styles from "./Footer.module.scss";
 function Footer() {
   return (
     <>
-      <hr className="line" />
-      <p className="footer">
+      <p className={styles.footer}>
         Made with ♥ by{" "}
-        <a href="https://github.com/lumiraelmar" className="footerLink">
+        <a href="https://github.com/lumiraelmar" className={styles.link}>
           Lu Miraelmar
         </a>
       </p>

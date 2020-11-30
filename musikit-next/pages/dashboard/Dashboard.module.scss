@@ -1,0 +1,14 @@
+.wrapper {
+  box-sizing: border-box;
+  background-color: rgb(255, 230, 234);
+  position: relative;
+  min-height: 100vh;
+  .mainWrapper {
+    display: flex;
+  }
+  .player {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+  }
+}
