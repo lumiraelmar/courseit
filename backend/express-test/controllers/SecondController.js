@@ -1,6 +1,7 @@
 const axios = require("axios");
 
-class UserController {
+class SecondController {
+  //ejercicio 0
   getPrimos(req, res) {
     const primos = [];
     let numero = 150;
@@ -26,12 +27,14 @@ class UserController {
     res.json(primosInfo);
   }
 
+  //ejercicio 1
   async getUser(req, res) {
     const user = req.params.id;
     const data = await axios.get(`https://api.github.com/users/${user}`);
     res.json(data.data);
   }
 
+  //ejercicio 2 y 3
   async getUser2(req, res) {
     const user = req.params.id;
     const data = await axios.get(`https://api.github.com/users/${user}`);
@@ -44,6 +47,7 @@ class UserController {
     res.json({ ...modeledData, edad: 23, helado: "menta granizada" });
   }
 
+  //ejercicio 4
   async getPokemonesPrimos(req, res) {
     const data = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=150`);
     const pokemones = data.data.results;
@@ -72,24 +76,6 @@ class UserController {
 
     res.send(hola);
   }
-
-  getName(req, res) {
-    res.send(`mi nombre es ${req.params.name} y mi edad es ${req.query.edad}`);
-  }
-
-  getNum(req, res) {
-    const num = req.params.num;
-    const multiplicacion = num * 2;
-    res.send(`${num} multiplicado por 2 es: ${multiplicacion}`);
-  }
-
-  getPalindromo(req, res) {
-    const str = req.params.str;
-    const reverse = str.split("").reverse().join("");
-    reverse == str
-      ? res.send(`La frase ${str} es un palíndromo ya que al revés se lee: ${reverse}.`)
-      : res.send(`La frase ${str} NO es un palíndromo ya que al revés se lee: ${reverse}.`);
-  }
 }
 
-module.exports = UserController;
+module.exports = SecondController;
