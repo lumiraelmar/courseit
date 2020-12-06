@@ -67,14 +67,14 @@ class SecondController {
       }
     }
 
-    let hola = primos.map((num) => {
+    let pokemonesPrimos = primos.map((num) => {
       return {
         numero: num,
-        pokemon: pokemones[num].name,
+        pokemon: pokemones[num - 1].name,
       };
     });
 
-    res.send(hola);
+    res.send(pokemonesPrimos);
   }
 }
 
