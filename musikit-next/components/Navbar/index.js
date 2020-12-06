@@ -3,19 +3,19 @@ import styles from "./Navbar.module.scss";
 
 function Navbar() {
   return (
-    <nav>
-      <ul>
+    <nav className={styles.navbar}>
+      <ul className={styles.list}>
         <Link href="">
-          <li>Destacados</li>
+          <li className={styles.item}>Destacados</li>
         </Link>
         <Link href="">
-          <li>Podcasts</li>
+          <li className={styles.item}>Podcasts</li>
         </Link>
         <Link href="">
-          <li>Playlists</li>
+          <li className={styles.item}>Playlists</li>
         </Link>
         <Link href="">
-          <li>Descubrir</li>
+          <li className={styles.item}>Descubrir</li>
         </Link>
       </ul>
     </nav>

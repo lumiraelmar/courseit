@@ -1,3 +1,7 @@
 .carouselWrapper {
   display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }

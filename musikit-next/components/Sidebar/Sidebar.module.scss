@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  .img {
+  }
+  .link {
+    margin: 5px 0;
+  }
+  .input {
+    background-color: #fafafa;
+    border: 1px solid pink;
+    width: 80%;
+    border-radius: 15px;
+    margin: 5px 0;
+  }
+}

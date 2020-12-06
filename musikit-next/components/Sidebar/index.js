@@ -9,15 +9,20 @@ function Sidebar() {
   }
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <img
+        className={styles.img}
         src="https://i.postimg.cc/X7H0yHXJ/spotify-Logo-White.png"
         width="200"
         onClick={handleClick}
       />
-      <a href="/">Inicio</a>
-      <input />
-      <a href="">Tu Biblioteca</a>
+      <a className={styles.link} onClick={handleClick}>
+        Inicio
+      </a>
+      <input className={styles.input} />
+      <a className={styles.link} href="">
+        Tu Biblioteca
+      </a>
     </div>
   );
 }

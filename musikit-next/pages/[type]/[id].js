@@ -51,21 +51,23 @@ export default function Album({ album, id }) {
         <Navbar />
         <div className={styles.mainWrapper}>
           <Sidebar />
-          {data.map((track, key) => {
-            return track.track ? (
-              <p
-                className={styles.song}
-                key={key}
-                onClick={() => handleClick(track.track.uri)}
-              >
-                {track.track.name}
-              </p>
-            ) : (
-              <p className={styles.song} key={key} onClick={() => handleClick(track.uri)}>
-                {track.name}
-              </p>
-            );
-          })}
+          <div>
+            {data.map((track, key) => {
+              return track.track ? (
+                <p
+                  className={styles.song}
+                  key={key}
+                  onClick={() => handleClick(track.track.uri)}
+                >
+                  {track.track.name}
+                </p>
+              ) : (
+                <p className={styles.song} key={key} onClick={() => handleClick(track.uri)}>
+                  {track.name}
+                </p>
+              );
+            })}
+          </div>
         </div>
         {(isChrome || isFirefox || isIE || isEdge) && isBrowser && token && (
           <div className={styles.player}>

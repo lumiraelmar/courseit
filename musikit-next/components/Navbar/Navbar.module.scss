@@ -1,0 +1,11 @@
+.navbar {
+  width: 100vw;
+  .list {
+    display: flex;
+    justify-content: flex-end;
+    .item {
+      margin: 10px 15px;
+      padding: 10px 0;
+    }
+  }
+}

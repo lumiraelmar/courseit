@@ -46,34 +46,17 @@ export default function Dashboard() {
       <Navbar />
       <div className={styles.mainWrapper}>
         <Sidebar />
-        {albums.items && <Carousel title="Saved Albums" albums={albums.items} />}
-        {popPunkAlbums.albums && (
-          <Carousel title="Taylor Swift" albums={popPunkAlbums.albums.items} />
-        )}
-        {recentlyPlayed.items && (
-          <Carousel title="Recently Played" albums={recentlyPlayed.items} />
-        )}
-        {playlists && <Carousel title="Playlists" albums={playlists.items} />}
-      </div>
-      {/* {(isChrome || isFirefox || isIE || isEdge) && isBrowser && recentlyPlayed.items && (
-        <div className={styles.player}>
-          <SpotifyPlayer
-            token={accessToken}
-            uris={recentlyPlayed.items[0].track.uri}
-            autoPlay="false"
-            play="false"
-            styles={{
-              bgColor: "pink",
-              color: "#fafafa",
-              sliderColor: "#fafafa",
-              trackArtistColor: "#fafafa",
-              trackNameColor: "#fafafa",
-              height: 70,
-            }}
-          />
+        <div className={styles.carouselWrapper}>
+          {albums.items && <Carousel title="Saved Albums" albums={albums.items} />}
+          {popPunkAlbums.albums && (
+            <Carousel title="Taylor Swift" albums={popPunkAlbums.albums.items} />
+          )}
+          {recentlyPlayed.items && (
+            <Carousel title="Recently Played" albums={recentlyPlayed.items} />
+          )}
+          {playlists && <Carousel title="Playlists" albums={playlists.items} />}
         </div>
-      )} */}
-      {/* <Player token={accessToken} /> */}
+      </div>
     </div>
   );
 }
