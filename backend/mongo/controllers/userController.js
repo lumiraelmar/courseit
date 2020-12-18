@@ -11,10 +11,10 @@ class UserController {
     const { name } = req.body;
     const { token } = req.headers;
     if (name && token == "r2d2") {
-      const add = await this.userService.addUser(name);
-      return res.json(add);
+      await this.userService.addUser(name);
+      res.status(200).json("usuario creado correctamente");
     } else if (token != "r2d2") {
-      res.status(401).send("falta token");
+      res.status(404).send("falta token");
     } else {
       res.status(400).send("falta name");
     }
@@ -24,10 +24,10 @@ class UserController {
     const { name, id } = req.body;
     const { token } = req.headers;
     if (name && id && token == "r2d2") {
-      const modify = await this.userService.modifyUser(id, name);
-      return res.json(modify);
+      await this.userService.modifyUser(id, name);
+      res.status(200).json("usuario modificado correctamente");
     } else if (token != "r2d2") {
-      res.status(401).send("falta token");
+      res.status(404).send("falta token");
     } else {
       res.status(400).send("falta name o id");
     }
@@ -37,10 +37,10 @@ class UserController {
     const { id } = req.params;
     const { token } = req.headers;
     if (id && token == "r2d2") {
-      const erase = await this.userService.deleteUser(id);
-      return res.json(erase);
+      await this.userService.deleteUser(id);
+      res.status(200).json("usuario eliminado correctamente");
     } else if (token != "r2d2") {
-      res.status(401).send("falta token");
+      res.status(404).send("falta token");
     } else {
       res.status(400).send("falta id");
     }
