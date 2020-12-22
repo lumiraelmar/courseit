@@ -1,8 +1,10 @@
 const ProductModel = require("../models/productModel");
 
 class ProductService {
-  getProducts() {
-    const query = ProductModel.find().exec();
+  getProducts(page) {
+    const limit = 5;
+    const offset = limit * (page - 1);
+    const query = ProductModel.find().skip(offset).limit(limit).exec();
     return query;
   }
   getFreeShipping() {

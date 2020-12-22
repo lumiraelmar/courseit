@@ -3,7 +3,12 @@ class ProductController {
     this.productService = productService;
   }
   async getProducts(req, res) {
-    const products = await this.productService.getProducts();
+    const { page } = req.query;
+    let pageNum = 1;
+    if (page) {
+      pageNum = page;
+    }
+    const products = await this.productService.getProducts(pageNum);
     return res.json(products);
   }
 
@@ -20,18 +25,36 @@ class ProductController {
 
   async addProduct(req, res) {
     const { body } = req;
+    const { name, price, category, quantity } = body;
 
-    await this.productService.addProduct(body);
-    return res.status(200).json("producto agregado");
+    if (name && price && category && quantity) {
+      try {
+        await this.productService.addProduct(body);
+        return res.status(200).send("producto agregado");
+      } catch (err) {
+        console.log(err);
+        return res.status(500).send("problema en la creacion");
+      }
+    } else {
+      return res.status(400).send("falta información del producto");
+    }
   }
 
   async modifyProduct(req, res) {
     const { body, params } = req;
-    if (params.id) {
-      await this.productService.modifyProduct(params.id, body);
-      return res.status(200).json("producto modificado");
+    const { name, price, category, quantity } = body;
+    if (params.id && name && price && category && quantity) {
+      try {
+        await this.productService.modifyProduct(params.id, body);
+        return res.status(200).send("producto modificado");
+      } catch (err) {
+        console.log(err);
+        return res.status(500).send("problema en la modificación");
+      }
+    } else if (!params.id) {
+      return res.status(400).send("olvidaste el id");
     } else {
-      return res.status(400).json("te olvidaste el id, no podemos modificar nada");
+      return res.status(400).send("olvidaste el información del producto");
     }
   }
 }
