@@ -2,7 +2,7 @@ const ProductModel = require("../models/productModel");
 
 class ProductService {
   getProducts(page) {
-    const limit = 5;
+    const limit = 3;
     const offset = limit * (page - 1);
     const query = ProductModel.find().skip(offset).limit(limit).exec();
     return query;
@@ -11,7 +11,7 @@ class ProductService {
     const query = ProductModel.find({ freeshipping: true }).exec();
     return query;
   }
-  getProduct(id) {
+  getProductById(id) {
     const query = ProductModel.find({ _id: id }).exec();
     return query;
   }
@@ -22,6 +22,10 @@ class ProductService {
   modifyProduct(id, data) {
     const product = ProductModel.findOneAndUpdate({ _id: id }, data).exec();
     return product;
+  }
+  addDiscount() {
+    const addDiscount = ProductModel.updateMany({}, { discount: 0 });
+    return addDiscount;
   }
 }
 

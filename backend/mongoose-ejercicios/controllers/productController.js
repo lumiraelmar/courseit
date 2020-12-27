@@ -17,9 +17,9 @@ class ProductController {
     return res.json(products);
   }
 
-  async getProduct(req, res) {
+  async getProductById(req, res) {
     const { id } = req.params;
-    const product = await this.productService.getProduct(id);
+    const product = await this.productService.getProductById(id);
     return res.json(product);
   }
 
@@ -56,6 +56,11 @@ class ProductController {
     } else {
       return res.status(400).send("olvidaste el información del producto");
     }
+  }
+
+  async addDiscount(req, res) {
+    await this.productService.addDiscount();
+    res.send("discount added");
   }
 }
 
