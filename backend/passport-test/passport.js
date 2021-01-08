@@ -3,6 +3,7 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const UserService = require("./services/userService");
 const UserInstance = new UserService();
+const bcrypt = require("bcrypt");
 
 passport.use(
   new LocalStrategy(
@@ -12,14 +13,14 @@ passport.use(
     },
     async (username, password, cb) => {
       try {
-        const userData = await UserInstance.getUserByName(username);
-        console.log(userData);
+        const userData = await UserInstance.getUserByName(username.toLowerCase());
         if (!userData) {
           //este usuario esta mal
           cb(null, false);
         }
 
-        if (userData.password != password) {
+        const compare = await bcrypt.compare(password, userData.password);
+        if (!compare) {
           //este usuario esta mal
           cb(null, false);
         }
@@ -34,12 +35,10 @@ passport.use(
 );
 
 passport.serializeUser((user, cb) => {
-  console.log("serialize", user);
   cb(null, user.name);
 });
 
 passport.deserializeUser(async (name, cb) => {
-  console.log("deserialize", name);
   const data = await UserInstance.getUserByName(name);
   cb(null, data);
 });

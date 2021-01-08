@@ -3,9 +3,20 @@ class UserController {
     this.userService = userService;
   }
 
-  async getUserByName(req, res) {
-    const users = await this.userService.getUsers();
-    return res.json(users);
+  async createUser(req, res) {
+    const { body } = req;
+    const name = body.name.toLowerCase();
+
+    if (body && body.name && body.password) {
+      try {
+        await this.userService.createUser({ ...body, name });
+        res.status(200).send("hola");
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      res.sendStatus(400);
+    }
   }
 }
 
